@@ -27,8 +27,8 @@
         * Microsoft.EntityFrameworkCore.SqlServer
         * Microsoft.EntityFrameworkCore.Tools
     * Creo la clase de context que herede de DbContext.
-
-
+* Interface
+* Repository 
 
 ## Creamos capa Dominio
 
