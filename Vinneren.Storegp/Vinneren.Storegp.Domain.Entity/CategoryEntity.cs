@@ -16,7 +16,10 @@ namespace Vinneren.Storegp.Domain.Entity
     [Table("Category")]
     public class CategoryEntity : ICategory
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Pk {get; set;}
+        [Column("Name", TypeName = "nvarchar(50)")]
         public string? Name { get; set; }
         public int Id { get; set; }
     }

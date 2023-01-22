@@ -15,9 +15,14 @@ namespace Vinneren.Storegp.Domain.Entity
     //==================================================================================================================
     [Table("Inventory")]
     public class InventoryEntity : IInventory
-    {
-        public int Pk { get; set; } 
+    { 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Pk { get; set; }
+
+        [Required]
         public DateTime Date { get; set; }
+        [Column("Note", TypeName = "nvarchar(100)")]
         public string? Note { get; set; }
     }
 }

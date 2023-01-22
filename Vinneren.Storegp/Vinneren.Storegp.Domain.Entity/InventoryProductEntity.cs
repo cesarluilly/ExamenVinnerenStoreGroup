@@ -16,12 +16,22 @@ namespace Vinneren.Storegp.Domain.Entity
     [Table("InventoryProduct")]
     public class InventoryProductEntity : IInventoryProduct
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Pk {get; set;}
-        public string? Name { get; set; }
-        public int Id { get; set; }
+        
         public int Units { get; set; }
+        [Column("Note", TypeName = "nvarchar(100)")]
         public string Note { get; set; }
+
+        [Required]
         public int PkInventory { get; set; }
+        [ForeignKey("PkInventory")]
+        public InventoryEntity? Inventory { get; set; }
+
+        [Required]
         public int PkProduct { get; set; }
+        [ForeignKey("PkProduct")]
+        public ProductEntity ? Product { get; set; }
     }
 }
