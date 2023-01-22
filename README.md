@@ -31,10 +31,17 @@
 * Repository 
 
 ## Creamos capa Dominio
+* Core
+* Entity
+* Interface
 
 ## Creamos capa Aplicacion
+* Dto
+* Interface
+* Main
 
 ## Creamos capa de Servicios
+* WebApi
 
 
 
