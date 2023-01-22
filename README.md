@@ -17,13 +17,16 @@
 ## Creamos el proyecto vacio y agregamos las siguientes carpetas
 ![initProject](./imgReadme/initProject.png)
 
-## Creamos capa Transversal
-* 
 
+## Creamos capa Transversal
+* Common
 
 ## Creamos capa de infraescructura de persistencia de datos.
-
-* 
+* Data 
+    * Instalamos el paquete
+        * Microsoft.EntityFrameworkCore.SqlServer
+        * Microsoft.EntityFrameworkCore.Tools
+    * Creo la clase de context que herede de DbContext.
 
 
 
