@@ -5,6 +5,36 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Transversal.Common", "Vinneren.Storegp.Transversal.Common\Vinneren.Storegp.Transversal.Common.csproj", "{FC941014-02A1-474B-9398-064563460378}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{8626BC44-ED86-41EC-8A40-D8298C955B14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{14D489CE-52ED-490F-8878-40D50BA57953}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraescructure", "Infraescructure", "{BDDB9058-80A6-4F9E-BCB8-C7C4768E9E4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{BA0D99EE-BF84-4D74-8044-B34B4A75494B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transversal", "Transversal", "{DCDB35B1-81A5-4227-BA8B-2EB28CB59275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Infraescructure.Data", "Vinneren.Storegp.Infraescructure.Data\Vinneren.Storegp.Infraescructure.Data.csproj", "{B232B323-C5DA-4024-A479-6F4B1F84105E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Infraescructure.Interface", "Vinneren.Storegp.Infraescructure.Interface\Vinneren.Storegp.Infraescructure.Interface.csproj", "{1FD6BD8D-70B2-4633-8862-5B10FCD20F1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Infraescructure.Repository", "Vinneren.Storegp.Infraescructure.Repository\Vinneren.Storegp.Infraescructure.Repository.csproj", "{D1EDA4E9-46CD-45A7-B4AF-B9D229D29670}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Domain.Entity", "Vinneren.Storegp.Domain.Entity\Vinneren.Storegp.Domain.Entity.csproj", "{C17C89C6-5BDC-44E9-ABA0-B1D4D89F93E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Domain.Interface", "Vinneren.Storegp.Domain.Interface\Vinneren.Storegp.Domain.Interface.csproj", "{63E00460-D90A-49D5-8B93-C26AA5AA41DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Domain.Core", "Vinneren.Storegp.Domain.Core\Vinneren.Storegp.Domain.Core.csproj", "{072BE9C7-CDC8-4E6A-866A-167FB3F616C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Application.DTO", "Vinneren.Storegp.Application.DTO\Vinneren.Storegp.Application.DTO.csproj", "{CEF3AB69-4E3B-43F5-9EA7-1D518AA11800}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Application.Interface", "Vinneren.Storegp.Application.Interface\Vinneren.Storegp.Application.Interface.csproj", "{A209F158-7B11-4ABF-BB68-6DEDEE284F87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Application.Main", "Vinneren.Storegp.Application.Main\Vinneren.Storegp.Application.Main.csproj", "{005471A5-9442-4A80-831E-EAD47A3D30F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1Vinneren.Storegp.Service.WebApi", "WebApplication1Vinneren.Storegp.Service.WebApi\WebApplication1Vinneren.Storegp.Service.WebApi.csproj", "{F8D93809-3088-47CD-ABFA-9EA5CCB23389}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +45,62 @@ Global
 		{FC941014-02A1-474B-9398-064563460378}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC941014-02A1-474B-9398-064563460378}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC941014-02A1-474B-9398-064563460378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B232B323-C5DA-4024-A479-6F4B1F84105E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B232B323-C5DA-4024-A479-6F4B1F84105E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B232B323-C5DA-4024-A479-6F4B1F84105E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B232B323-C5DA-4024-A479-6F4B1F84105E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD6BD8D-70B2-4633-8862-5B10FCD20F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD6BD8D-70B2-4633-8862-5B10FCD20F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD6BD8D-70B2-4633-8862-5B10FCD20F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD6BD8D-70B2-4633-8862-5B10FCD20F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1EDA4E9-46CD-45A7-B4AF-B9D229D29670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1EDA4E9-46CD-45A7-B4AF-B9D229D29670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1EDA4E9-46CD-45A7-B4AF-B9D229D29670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1EDA4E9-46CD-45A7-B4AF-B9D229D29670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C17C89C6-5BDC-44E9-ABA0-B1D4D89F93E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C17C89C6-5BDC-44E9-ABA0-B1D4D89F93E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C17C89C6-5BDC-44E9-ABA0-B1D4D89F93E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C17C89C6-5BDC-44E9-ABA0-B1D4D89F93E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63E00460-D90A-49D5-8B93-C26AA5AA41DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E00460-D90A-49D5-8B93-C26AA5AA41DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E00460-D90A-49D5-8B93-C26AA5AA41DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E00460-D90A-49D5-8B93-C26AA5AA41DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072BE9C7-CDC8-4E6A-866A-167FB3F616C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072BE9C7-CDC8-4E6A-866A-167FB3F616C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072BE9C7-CDC8-4E6A-866A-167FB3F616C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072BE9C7-CDC8-4E6A-866A-167FB3F616C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEF3AB69-4E3B-43F5-9EA7-1D518AA11800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF3AB69-4E3B-43F5-9EA7-1D518AA11800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF3AB69-4E3B-43F5-9EA7-1D518AA11800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF3AB69-4E3B-43F5-9EA7-1D518AA11800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A209F158-7B11-4ABF-BB68-6DEDEE284F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A209F158-7B11-4ABF-BB68-6DEDEE284F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A209F158-7B11-4ABF-BB68-6DEDEE284F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A209F158-7B11-4ABF-BB68-6DEDEE284F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005471A5-9442-4A80-831E-EAD47A3D30F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005471A5-9442-4A80-831E-EAD47A3D30F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005471A5-9442-4A80-831E-EAD47A3D30F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005471A5-9442-4A80-831E-EAD47A3D30F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D93809-3088-47CD-ABFA-9EA5CCB23389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D93809-3088-47CD-ABFA-9EA5CCB23389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D93809-3088-47CD-ABFA-9EA5CCB23389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D93809-3088-47CD-ABFA-9EA5CCB23389}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC941014-02A1-474B-9398-064563460378} = {DCDB35B1-81A5-4227-BA8B-2EB28CB59275}
+		{B232B323-C5DA-4024-A479-6F4B1F84105E} = {BDDB9058-80A6-4F9E-BCB8-C7C4768E9E4F}
+		{1FD6BD8D-70B2-4633-8862-5B10FCD20F1C} = {BDDB9058-80A6-4F9E-BCB8-C7C4768E9E4F}
+		{D1EDA4E9-46CD-45A7-B4AF-B9D229D29670} = {BDDB9058-80A6-4F9E-BCB8-C7C4768E9E4F}
+		{C17C89C6-5BDC-44E9-ABA0-B1D4D89F93E8} = {14D489CE-52ED-490F-8878-40D50BA57953}
+		{63E00460-D90A-49D5-8B93-C26AA5AA41DB} = {14D489CE-52ED-490F-8878-40D50BA57953}
+		{072BE9C7-CDC8-4E6A-866A-167FB3F616C2} = {14D489CE-52ED-490F-8878-40D50BA57953}
+		{CEF3AB69-4E3B-43F5-9EA7-1D518AA11800} = {8626BC44-ED86-41EC-8A40-D8298C955B14}
+		{A209F158-7B11-4ABF-BB68-6DEDEE284F87} = {8626BC44-ED86-41EC-8A40-D8298C955B14}
+		{005471A5-9442-4A80-831E-EAD47A3D30F9} = {8626BC44-ED86-41EC-8A40-D8298C955B14}
+		{F8D93809-3088-47CD-ABFA-9EA5CCB23389} = {BA0D99EE-BF84-4D74-8044-B34B4A75494B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1A989D64-0062-456C-BED0-7FED7BA536B5}
