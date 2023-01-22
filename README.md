@@ -14,7 +14,11 @@
     * > nombreEmpresa.nombreAplicacion
 ![netStandart](./imgReadme/netStandart.png)
 
+## Creamos el proyecto vacio y agregamos las siguientes carpetas
+![initProject](./imgReadme/initProject.png)
+
 ## Creamos capa Transversal
+* 
 
 
 ## Creamos capa de infraescructura de persistencia de datos.
