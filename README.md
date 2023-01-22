@@ -53,9 +53,24 @@
 
 * Creo todos los Dtos por tabla en capa de aplicacion.
 
+* Creo mi interfaz y clase de UnitOfWork
+    * > IUnitOfWork
+    * > UnitOfWork : IUnitOfWork
 
+* Creo mi interfaz de repositorio generico
+    * > IRepositoryGenericTEntity
 
+* Creo mi repositorio generico
+    * > RepositoryGenericTEntity
 
+* Creo mi interfaz de repo para tabla Category que implemente del 
+repo generico
+    * > ICategoryRepo<TEntity> : IRepositoryGenericTEntity<TEntity>
+
+* Creo mi repositorio para la tabla Category e implemento y codifico todos los metodos
+    * > CategoryRepo<TEntity> : ICategoryRepo<TEntity> where TEntity : class
+* De la misma forma que cree ICategoryRepo y CategoryRepo asi sigo
+construyendo los repositorios para las demas tablas.
 
 
 
