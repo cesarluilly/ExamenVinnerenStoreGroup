@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vinneren.Storegp.Domain.Interface.ByTable;
 
 //                                                          //AUTHOR:  (CLGA - Cesar Garcia).
-//                                                          //CO-AUTHOR:  ().
+//                                                          //CO-AUTHOR:  (-).
 //                                                          //DATE: January 22, 2022. 
-namespace Vinneren.Storegp.Domain.Interface.ByTable
+namespace Vinneren.Storegp.Domain.Entity
 {
     //==================================================================================================================
-    public interface IInventoryProduct
-    {
+    public class InventoryDto : IInventory
+    { 
         public int Pk { get; set; }
-        public int Units { get; set; }
-        public String? Note { get; set; }
-        public int PkInventory { get; set; }
-        public int PkProduct { get; set; }
+        public DateTime Date { get; set; }
+        public string? Note { get; set; }
     }
 }

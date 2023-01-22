@@ -43,9 +43,15 @@
 ## Creamos capa de Servicios
 * WebApi
 
-## Creamos todas las entity en la capa de Dominio.Entity y algunas interfaces en Dominio.entity.
+## Generando Infraescructura en diferentes capas(Aplicacion, Dominio, Persistencia de datos)
 
-## Modifico el startup y el programa para configurar la migracion
+* Creamos todas las entitys en la capa de Dominio.Entity y algunas interfaces en Dominio.entity.
+
+* Modifico el startup y el programa para configurar la migracion
+
+* Configuro AutoMapper
+
+* Creo todos los Dtos por tabla en capa de aplicacion.
 
 
 
