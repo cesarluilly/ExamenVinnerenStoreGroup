@@ -43,6 +43,11 @@
 ## Creamos capa de Servicios
 * WebApi
 
+## Creamos todas las entity en la capa de Dominio.Entity y algunas interfaces en Dominio.entity.
+
+## Modifico el startup y el programa para configurar la migracion
+
+
 
 
 
