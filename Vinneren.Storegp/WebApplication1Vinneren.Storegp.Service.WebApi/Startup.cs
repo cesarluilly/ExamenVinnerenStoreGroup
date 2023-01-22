@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Vinneren.Storegp.Infraescructure.Data;
+using Vinneren.Storegp.Transversal.Mapper;
 
 namespace WebApplication1Vinneren.Storegp.Service.WebApi
 {
@@ -30,6 +31,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi
             });
 
             services.AddControllersWithViews();
+            services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
