@@ -83,8 +83,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
         //--------------------------------------------------------------------------------------------------------------
         public void UpdateOne(TEntity data, bool boolSaveChanges = true)
         {
-            _dbSet.Attach(data);
-            _context.Entry(data).State = EntityState.Modified;
+            _context.Update(data);
             if (boolSaveChanges)
                 this._context.SaveChanges();
         }
@@ -92,8 +91,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
         //--------------------------------------------------------------------------------------------------------------
         public void UpdateList(List<TEntity> data, bool boolSaveChanges = true)
         {
-            _dbSet.AttachRange(data);
-            _context.Entry(data).State = EntityState.Modified;
+            _context.UpdateRange(data);
             if (boolSaveChanges)
                 this._context.SaveChanges();
         }
@@ -103,7 +101,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
         //--------------------------------------------------------------------------------------------------------------
         public void DeleteOnePhysical(TEntity data, bool boolSaveChanges = true)
         {
-            _dbSet.Remove(data);
+            _context.Remove(data);
             if (boolSaveChanges)
                 this._context.SaveChanges();
         }
@@ -112,7 +110,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
         public void DeleteOnePhysicalByPk(int intPk, bool boolSaveChanges = true)
         {
             var dataToDelete = _dbSet.Find(intPk);
-            _dbSet.Remove(dataToDelete);
+            _context.Remove(dataToDelete);
             if (boolSaveChanges)
                 this._context.SaveChanges();
         }
@@ -120,7 +118,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
         //--------------------------------------------------------------------------------------------------------------
         public void DeleteListPhysical(List<TEntity> data, bool boolSaveChanges = true)
         {
-            _dbSet.RemoveRange(data);
+            _context.RemoveRange(data);
             if (boolSaveChanges)
                 this._context.SaveChanges();
         }

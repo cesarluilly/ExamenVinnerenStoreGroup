@@ -28,7 +28,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
         }
 
         //**************************************************//VinContext\\**********************************************
-        
+
         //                                                  //CategoryRepo
         private ICategoryRepo<CategoryEntity> _categoryRepo;
         public ICategoryRepo<CategoryEntity> CategoryRepo
@@ -41,7 +41,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
             }
         }
 
-        //                                                  //inventoryRepo
+        //                                                  //InventoryRepo
         private IInventoryRepo<InventoryEntity> _inventoryRepo;
         public IInventoryRepo<InventoryEntity> InventoryRepo
         {
@@ -65,7 +65,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
             }
         }
 
-        //                                                  //EmployeeSettingsRepoC
+        //                                                  //ProducRepo
         private IProductRepo<ProductEntity> _productRepo;
         public IProductRepo<ProductEntity> ProductRepo
         {
@@ -77,7 +77,7 @@ namespace Vinneren.Storegp.Infraescructure.Repository
             }
         }
 
-        //                                                  //EmployeeSettingsRepoC
+        //                                                  //SubcategoryRepo
         private ISubcategoryRepo<SubcategoryEntity> _subcategoryRepo;
         public ISubcategoryRepo<SubcategoryEntity> SubcategoryRepo
         {
@@ -90,6 +90,12 @@ namespace Vinneren.Storegp.Infraescructure.Repository
         }
 
         //**************************************************//OPERATION DATABASE ODYSSEY2DB\\***************************
+
+        //--------------------------------------------------------------------------------------------------------------
+        public VinnContext context
+        {
+            get { return this._context; }
+        }
 
         //--------------------------------------------------------------------------------------------------------------
         public void Save()

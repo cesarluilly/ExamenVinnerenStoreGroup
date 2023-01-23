@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vinneren.Storegp.Domain.Entity;
+using Vinneren.Storegp.Infraescructure.Data;
 
 namespace Vinneren.Storegp.Infraescructure.Interface
 {
@@ -19,6 +20,7 @@ namespace Vinneren.Storegp.Infraescructure.Interface
         public ISubcategoryRepo<SubcategoryEntity> SubcategoryRepo { get; }
 
         //**************************************************//OPERATION DATABASE ODYSSEY2DB\\***************************
+        public VinnContext context { get; }
         public void Save();
         public void StartTransaction();
         public void CommitTransaction();

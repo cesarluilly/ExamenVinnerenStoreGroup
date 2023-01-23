@@ -72,6 +72,10 @@ repo generico
 * De la misma forma que cree ICategoryRepo y CategoryRepo asi sigo
 construyendo los repositorios para las demas tablas.
 
+* A la interfaz IUnitOfWork establesco los repositorios que tendra
+la clase UnitOfWork e implemento los repositorios.
+
+* Creo mi clase BusinessClassObjet (Clase de negocio)
 
 
 

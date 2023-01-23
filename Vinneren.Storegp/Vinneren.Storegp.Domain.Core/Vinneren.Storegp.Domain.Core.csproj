@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Vinneren.Storegp.Infraescructure.Data\Vinneren.Storegp.Infraescructure.Data.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Infraescructure.Interface\Vinneren.Storegp.Infraescructure.Interface.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Transversal.Mapper\Vinneren.Storegp.Transversal.Mapper.csproj" />
+  </ItemGroup>
+
 </Project>

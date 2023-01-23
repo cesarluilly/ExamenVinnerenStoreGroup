@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Vinneren.Storegp.Domain.Entity\Vinneren.Storegp.Domain.Entity.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Infraescructure.Data\Vinneren.Storegp.Infraescructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
