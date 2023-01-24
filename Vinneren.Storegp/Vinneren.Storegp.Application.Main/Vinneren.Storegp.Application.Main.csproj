@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Vinneren.Storegp.Application.Interface\Vinneren.Storegp.Application.Interface.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Application.Validator\Vinneren.Storegp.Application.Validator.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Domain.Core\Vinneren.Storegp.Domain.Core.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Transversal.Common\Vinneren.Storegp.Transversal.Common.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Transversal.Mapper\Vinneren.Storegp.Transversal.Mapper.csproj" />
+  </ItemGroup>
+
 </Project>

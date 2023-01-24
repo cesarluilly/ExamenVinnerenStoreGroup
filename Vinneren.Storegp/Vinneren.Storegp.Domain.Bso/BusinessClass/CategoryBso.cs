@@ -1,16 +1,15 @@
-﻿using System;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vinneren.Storegp.Domain.Entity;
-using Vinneren.Storegp.Domain.Interface.ByTable;
-using Vinneren.Storegp.Infraescructure.Data;
+using Vinneren.Storegp.Domain.Entity.ByTable;
 using Vinneren.Storegp.Infraescructure.Interface;
-using Vinneren.Storegp.Transversal.Mapper;
-using Microsoft.EntityFrameworkCore;
 
-namespace Vinneren.Storegp.Domain.Core.BusinessClass
+namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 {
 	//==================================================================================================================
 	//                                                      //Responsabilidad: Proporciona propiedades y comportamientos 
@@ -74,12 +73,13 @@ namespace Vinneren.Storegp.Domain.Core.BusinessClass
 		public static CategoryBso categoryAddToDB(
 
             ICategory dto_I,
-			IUnitOfWork unitOfWork_M,
+            IMapper mapper_I,
+            IUnitOfWork unitOfWork_M,
 			bool boolSaveChanges_I = true
 			)
 		{
 			CategoryEntity entity =
-			AutoMapperConfig.mapper.Map<CategoryEntity>(dto_I);
+            mapper_I.Map<CategoryEntity>(dto_I);
 
 			unitOfWork_M.CategoryRepo.AddOne(entity, boolSaveChanges_I);
 

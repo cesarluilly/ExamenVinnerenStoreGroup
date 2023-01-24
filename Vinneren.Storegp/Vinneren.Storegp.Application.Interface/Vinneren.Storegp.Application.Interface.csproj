@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Vinneren.Storegp.Application.DTO\Vinneren.Storegp.Application.DTO.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Transversal.Common\Vinneren.Storegp.Transversal.Common.csproj" />
+  </ItemGroup>
+
 </Project>

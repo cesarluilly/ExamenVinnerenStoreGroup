@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vinneren.Storegp.Domain.Entity;
 
 namespace Vinneren.Storegp.Transversal.Mapper
 {
@@ -13,8 +14,7 @@ namespace Vinneren.Storegp.Transversal.Mapper
         public MappingsProfile()
         {
             //                                              //Example
-            //this.CreateMap<ContactTagsNoteForTagDto, CtagnotentityContactTagsNoteEntityDB>().ReverseMap()
-            //CreateMap<EmpsettentityEmployeeSettingsEntityDB, EmployeeSettingsDto>().ReverseMap();
+            CreateMap<CategoryEntity, CategoryDto>().ReverseMap();
         }
     }
 

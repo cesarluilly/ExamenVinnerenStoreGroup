@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vinneren.Storegp.Application.DTO\Vinneren.Storegp.Application.DTO.csproj" />
-    <ProjectReference Include="..\Vinneren.Storegp.Domain.Core\Vinneren.Storegp.Domain.Core.csproj" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Vinneren.Storegp.Infraescructure.Interface\Vinneren.Storegp.Infraescructure.Interface.csproj" />
-    <ProjectReference Include="..\Vinneren.Storegp.Transversal.Common\Vinneren.Storegp.Transversal.Common.csproj" />
   </ItemGroup>
 
 </Project>

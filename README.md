@@ -75,8 +75,27 @@ construyendo los repositorios para las demas tablas.
 * A la interfaz IUnitOfWork establesco los repositorios que tendra
 la clase UnitOfWork e implemento los repositorios.
 
+* Creo mis interfaces vacias de CategoryApplication, CategoryDomain, CategoryController
+
+* Creo mi clase ResResponse
+
 * Creo mi clase BusinessClassObjet (Clase de negocio)
 
+* Creo mis BSO que daran soporte a cada tabla
+
+# Empezar a crear mis servicios de aplicacion.
+
+* Se define a nivel de capa de interfaz de **Aplicacion** lo que recibira el servicio de aplicacion.
+
+* Se define a nivel de capa de interfaz de **Dominio** lo que recibira el servicio.
+
+* Se implementa el metodo de la interfaz de **Aplicacion** en la clase que implementa la interfaz de **Aplicacion**.
+* Se implementa el metodo de la interfaz de **Dominio** en la clase que implementa la interfaz de **Dominio**.
+
+# Empezar a crear mis servicios REST.
+* Agrego la inyeccion de dependencias de mis interfaces de la capa **Aplication** y **Dominio**
+
+* Creo mi controlador y agrego mi primer servicio REST.
 
 
 

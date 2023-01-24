@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Vinneren.Storegp.Domain.Interface\Vinneren.Storegp.Domain.Interface.csproj" />
-  </ItemGroup>
-
 </Project>

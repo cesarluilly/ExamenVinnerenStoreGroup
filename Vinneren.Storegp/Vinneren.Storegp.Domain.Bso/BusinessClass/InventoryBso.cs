@@ -4,41 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vinneren.Storegp.Domain.Entity;
-using Vinneren.Storegp.Domain.Interface.ByTable;
+using Vinneren.Storegp.Domain.Entity.ByTable;
 using Vinneren.Storegp.Infraescructure.Data;
 using Vinneren.Storegp.Infraescructure.Interface;
-using Vinneren.Storegp.Transversal.Mapper;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
-namespace Vinneren.Storegp.Domain.Core.BusinessClass
+namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 {
 	//==================================================================================================================
 	//                                                      //Responsabilidad: Proporciona propiedades y comportamientos 
 	//                                                      //   para el objeto.   
-	public class ProductBso :
+	public class InventoryBso :
 		BsoBusinessObject,
-		IProduct
+		IInventory
 	{
         //-------------------------------------------------------------------------------------------------------------
         //                                                  //INSTANCE VARIABLES.
-        public int Pk { get { return this.ProductEntity.Pk ;} 
-			set { this.ProductEntity.Pk = value;}}
-        public string? Name { get { return this.ProductEntity.Name ;} 
-			set { this.ProductEntity.Name = value;}}
-        public string? NumMaterial { get { return this.ProductEntity.NumMaterial ;} 
-			set { this.ProductEntity.NumMaterial = value;} }
 
+        public int Pk { get { return this._inventoryEntity_Z.Pk; } set {this._inventoryEntity_Z.Pk = value;} }
+        public DateTime Date { get { return this._inventoryEntity_Z.Date; } set {this._inventoryEntity_Z.Date = value;} }
+        public string? Note { get { return this._inventoryEntity_Z.Note; } set { this._inventoryEntity_Z.Note = value;} }
 
         //--------------------------------------------------------------------------------------------------------------
         //                                                  //DYNAMIC VARIABLES.
 
         //                                                  //Category
-        private ProductEntity ProductEntity_Z;
-		public ProductEntity ProductEntity 
+        private InventoryEntity _inventoryEntity_Z;
+		public InventoryEntity InventoryEntity 
 		{
 			get
 			{
-				return ProductEntity_Z;
+				return _inventoryEntity_Z;
 			}
 		}
 
@@ -55,14 +52,14 @@ namespace Vinneren.Storegp.Domain.Core.BusinessClass
         //                                                  //CONSTRUCTORS.
 
         //--------------------------------------------------------------------------------------------------------------
-        public ProductBso(
-			ProductEntity Category_I,
+        public InventoryBso(
+			InventoryEntity Category_I,
 			IUnitOfWork unitOfWork_I,
 			bool boolAsTracking_I
 			) : base(Category_I, unitOfWork_I, boolAsTracking_I)
 		{
 			//                                              //Assig data related to Dto.
-			this.ProductEntity_Z = Category_I; 					
+			this._inventoryEntity_Z = Category_I; 					
 
 			//                                              //Inject dependences.
 
@@ -75,33 +72,34 @@ namespace Vinneren.Storegp.Domain.Core.BusinessClass
 		//                                                  //ACCESS METHODS.
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static ProductBso categoryAddToDB(
+		public static InventoryBso inventoryAddToDB(
 
-            IProduct dto_I,
-			IUnitOfWork unitOfWork_M,
+            IInventory dto_I,
+            IMapper mapper_I,
+            IUnitOfWork unitOfWork_M,
 			bool boolSaveChanges_I = true
 			)
 		{
-			ProductEntity entity =
-			AutoMapperConfig.mapper.Map<ProductEntity>(dto_I);
+			InventoryEntity entity =
+			mapper_I.Map<InventoryEntity>(dto_I);
 
-			unitOfWork_M.ProductRepo.AddOne(entity, boolSaveChanges_I);
+			unitOfWork_M.InventoryRepo.AddOne(entity, boolSaveChanges_I);
 
-            return new ProductBso(entity, unitOfWork_M, true);
+            return new InventoryBso(entity, unitOfWork_M, true);
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static ProductBso categoryFromDB(
+		public static InventoryBso inventoryFromDB(
 
 			int intPk_I,
 			IUnitOfWork unitOfWork_I,
 			bool boolAsTracking_I
 			)
 		{
-			ProductBso bso = null;
+			InventoryBso bso = null;
 
-			IQueryable<ProductEntity> iqy = unitOfWork_I.ProductRepo.GetOneByPk(intPk_I);
-			ProductEntity entity;
+			IQueryable<InventoryEntity> iqy = unitOfWork_I.InventoryRepo.GetOneByPk(intPk_I);
+			InventoryEntity entity;
 
 			if (
 				boolAsTracking_I
@@ -117,21 +115,21 @@ namespace Vinneren.Storegp.Domain.Core.BusinessClass
 			if (
 				entity != null
 				)
-				bso = new ProductBso(entity, unitOfWork_I, boolAsTracking_I);
+				bso = new InventoryBso(entity, unitOfWork_I, boolAsTracking_I);
 			return bso;
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static ProductBso categoryFromIQueryable(
+		public static InventoryBso inventoryFromIQueryable(
 
-			IQueryable<ProductEntity> iqy_I,
+			IQueryable<InventoryEntity> iqy_I,
 			IUnitOfWork unitOfWork_I,
 			bool boolAsTracking_I
 			)
 		{
-			ProductBso bso = null;
+			InventoryBso bso = null;
 
-			ProductEntity entity;
+			InventoryEntity entity;
 
 			if (
 				boolAsTracking_I
@@ -147,19 +145,19 @@ namespace Vinneren.Storegp.Domain.Core.BusinessClass
 			if (
 				entity != null
 				)
-				bso = new ProductBso(entity, unitOfWork_I, boolAsTracking_I);
+				bso = new InventoryBso(entity, unitOfWork_I, boolAsTracking_I);
 			return bso;
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static List<ProductBso> darrcategoryFromIQueryable(
+		public static List<InventoryBso> darrinventoryFromIQueryable(
 
-			IQueryable<ProductEntity> iqy_I,
+			IQueryable<InventoryEntity> iqy_I,
 			IUnitOfWork unitOfWork_I,
 			bool boolAsTracking_I
 			)
 		{
-			List<ProductEntity> darrentity = new List<ProductEntity>(); ;
+			List<InventoryEntity> darrentity = new List<InventoryEntity>(); ;
 
 			if (
 				boolAsTracking_I
@@ -172,7 +170,7 @@ namespace Vinneren.Storegp.Domain.Core.BusinessClass
 				darrentity = iqy_I.AsNoTracking().ToList();
 			}
 
-			List<ProductBso> darrbso = darrentity.Select(entity => new ProductBso(entity,
+			List<InventoryBso> darrbso = darrentity.Select(entity => new InventoryBso(entity,
 					unitOfWork_I, boolAsTracking_I)).ToList();
 
 			return darrbso;

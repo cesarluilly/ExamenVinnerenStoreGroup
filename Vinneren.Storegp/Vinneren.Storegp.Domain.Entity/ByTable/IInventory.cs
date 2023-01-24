@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 //                                                          //AUTHOR:  (CLGA - Cesar Garcia).
 //                                                          //CO-AUTHOR:  ().
 //                                                          //DATE: January 22, 2022. 
-namespace Vinneren.Storegp.Domain.Interface.ByTable
+namespace Vinneren.Storegp.Domain.Entity.ByTable
 {
     //==================================================================================================================
-    public interface ISubcategory
+    public interface IInventory
     {
         public int Pk { get; set; }
-        public String? Name { get; set; }
-        public int Id { get; set; }
+        public DateTime Date { get; set; }
+        public String? Note { get; set; }
     }
 }

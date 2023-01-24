@@ -35,9 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vinneren.Storegp.Applicatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1Vinneren.Storegp.Service.WebApi", "WebApplication1Vinneren.Storegp.Service.WebApi\WebApplication1Vinneren.Storegp.Service.WebApi.csproj", "{F8D93809-3088-47CD-ABFA-9EA5CCB23389}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Transversal.Mapper", "Vinneren.Storegp.Transversal.Mapper\Vinneren.Storegp.Transversal.Mapper.csproj", "{ADAA8772-0683-4A2C-BC69-9E10A2246858}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vinneren.Storegp.Transversal.Mapper", "Vinneren.Storegp.Transversal.Mapper\Vinneren.Storegp.Transversal.Mapper.csproj", "{ADAA8772-0683-4A2C-BC69-9E10A2246858}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Application.Validator", "Vinneren.Storegp.Application.Validator\Vinneren.Storegp.Application.Validator.csproj", "{DF58F48C-8E8F-48E7-8054-03ED359EB62D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vinneren.Storegp.Application.Validator", "Vinneren.Storegp.Application.Validator\Vinneren.Storegp.Application.Validator.csproj", "{DF58F48C-8E8F-48E7-8054-03ED359EB62D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vinneren.Storegp.Domain.Bso", "Vinneren.Storegp.Domain.Bso\Vinneren.Storegp.Domain.Bso.csproj", "{9546E579-096F-4C2D-BE3B-7003287E2F1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,10 @@ Global
 		{DF58F48C-8E8F-48E7-8054-03ED359EB62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF58F48C-8E8F-48E7-8054-03ED359EB62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF58F48C-8E8F-48E7-8054-03ED359EB62D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9546E579-096F-4C2D-BE3B-7003287E2F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9546E579-096F-4C2D-BE3B-7003287E2F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9546E579-096F-4C2D-BE3B-7003287E2F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9546E579-096F-4C2D-BE3B-7003287E2F1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +121,7 @@ Global
 		{F8D93809-3088-47CD-ABFA-9EA5CCB23389} = {BA0D99EE-BF84-4D74-8044-B34B4A75494B}
 		{ADAA8772-0683-4A2C-BC69-9E10A2246858} = {DCDB35B1-81A5-4227-BA8B-2EB28CB59275}
 		{DF58F48C-8E8F-48E7-8054-03ED359EB62D} = {8626BC44-ED86-41EC-8A40-D8298C955B14}
+		{9546E579-096F-4C2D-BE3B-7003287E2F1E} = {14D489CE-52ED-490F-8878-40D50BA57953}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1A989D64-0062-456C-BED0-7FED7BA536B5}

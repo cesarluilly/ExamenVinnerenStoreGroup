@@ -5,10 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vinneren.Storegp.Domain.Interface.ByTable;
+using Vinneren.Storegp.Domain.Entity.ByTable;
 
 //                                                          //AUTHOR:  (CLGA - Cesar Garcia).
-//                                                          //CO-AUTHOR:  (-).
 //                                                          //DATE: January 22, 2022. 
 namespace Vinneren.Storegp.Domain.Entity
 {

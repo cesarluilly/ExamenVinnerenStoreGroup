@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vinneren.Storegp.Domain.Entity;
-using Vinneren.Storegp.Domain.Interface.ByTable;
+using Vinneren.Storegp.Domain.Entity.ByTable;
 using Vinneren.Storegp.Infraescructure.Data;
 using Vinneren.Storegp.Infraescructure.Interface;
-using Vinneren.Storegp.Transversal.Mapper;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
-namespace Vinneren.Storegp.Domain.Core.BusinessClass
+namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 {
 	//==================================================================================================================
 	//                                                      //Responsabilidad: Proporciona propiedades y comportamientos 
@@ -74,12 +74,13 @@ namespace Vinneren.Storegp.Domain.Core.BusinessClass
 		public static SubcategoryBso subcategoryAddToDB(
 
             ISubcategory dto_I,
-			IUnitOfWork unitOfWork_M,
+            IMapper mapper_I,
+            IUnitOfWork unitOfWork_M,
 			bool boolSaveChanges_I = true
 			)
 		{
 			SubcategoryEntity entity =
-			AutoMapperConfig.mapper.Map<SubcategoryEntity>(dto_I);
+			mapper_I.Map<SubcategoryEntity>(dto_I);
 
 			unitOfWork_M.SubcategoryRepo.AddOne(entity, boolSaveChanges_I);
 

@@ -18,7 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Vinneren.Storegp.Application.Interface\Vinneren.Storegp.Application.Interface.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Application.Main\Vinneren.Storegp.Application.Main.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Domain.Core\Vinneren.Storegp.Domain.Core.csproj" />
     <ProjectReference Include="..\Vinneren.Storegp.Infraescructure.Data\Vinneren.Storegp.Infraescructure.Data.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Infraescructure.Interface\Vinneren.Storegp.Infraescructure.Interface.csproj" />
+    <ProjectReference Include="..\Vinneren.Storegp.Infraescructure.Repository\Vinneren.Storegp.Infraescructure.Repository.csproj" />
     <ProjectReference Include="..\Vinneren.Storegp.Transversal.Common\Vinneren.Storegp.Transversal.Common.csproj" />
     <ProjectReference Include="..\Vinneren.Storegp.Transversal.Mapper\Vinneren.Storegp.Transversal.Mapper.csproj" />
   </ItemGroup>

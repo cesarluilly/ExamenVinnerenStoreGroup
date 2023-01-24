@@ -1,5 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Vinneren.Storegp.Application.Interface;
+using Vinneren.Storegp.Application.Main;
+using Vinneren.Storegp.Domain.Core;
+using Vinneren.Storegp.Domain.Interface;
 using Vinneren.Storegp.Infraescructure.Data;
+using Vinneren.Storegp.Infraescructure.Interface;
+using Vinneren.Storegp.Infraescructure.Repository;
 using Vinneren.Storegp.Transversal.Mapper;
 
 namespace WebApplication1Vinneren.Storegp.Service.WebApi
@@ -10,6 +16,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            AutoMapperConfig.Configure();
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -31,7 +38,11 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi
             });
 
             services.AddControllersWithViews();
+
             services.AddAutoMapper(x => x.AddProfile(new MappingsProfile()));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ICategoryApplication, CategoryApplication>();
+            services.AddScoped<ICategoryDomain, CategoryDomain>();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)
