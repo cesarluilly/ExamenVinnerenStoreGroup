@@ -4,6 +4,9 @@
 
 ![arquitecturaNCapas](./imgReadme/arquitecturaNCapas.png)
 
+# Modelo Entidad Relacion de nuestra DB
+![dfEntidadRelacion](./imgReadme/dfEntidadRelacion.png)
+
 # Paso para la creacion del proyecto.
 * Nota. Cada proyecto a excepcion del WebApi, se crearan con
 .NetStandart
@@ -16,7 +19,6 @@
 
 ## Creamos el proyecto vacio y agregamos las siguientes carpetas
 ![initProject](./imgReadme/initProject.png)
-
 
 ## Creamos capa Transversal
 * Common
@@ -97,8 +99,12 @@ la clase UnitOfWork e implemento los repositorios.
 
 * Creo mi controlador y agrego mi primer servicio REST.
 
+# Swagger con todos los servicios realizados
+![categoryAndInventory](./imgReadme/categoryAndInventory.png)
+![ProductAndInvProdAndSubcategory](./imgReadme/ProductAndInvProdAndSubcategory.png)
 
-
+## Corrida 
+![corrida1](./imgReadme/corrida1.png)
 
 
 
