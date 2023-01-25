@@ -56,6 +56,22 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
 
         //--------------------------------------------------------------------------------------------------------------
         [HttpGet("[action]")]
+        public IActionResult GetByRangeInventory(
+            
+            int intInitial, 
+            int intEnd
+            )
+        {
+            var response = _productApplication.GetByRangeInventory(intInitial, intEnd);
+
+            if (response.intStatus == 200)
+                return Ok(response);
+
+            return BadRequest(response);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        [HttpGet("[action]")]
         public IActionResult GetAll(
 
             )
