@@ -149,7 +149,7 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static List<SubcategoryBso> darrcategoryFromIQueryable(
+		public static List<SubcategoryBso> darrsubCategoryFromIQueryable(
 
 			IQueryable<SubcategoryEntity> iqy_I,
 			IUnitOfWork unitOfWork_I,

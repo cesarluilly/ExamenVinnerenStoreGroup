@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vinneren.Storegp.Domain.Bso.BusinessClass;
 using Vinneren.Storegp.Domain.Entity;
+using Vinneren.Storegp.Domain.Entity.ByTable;
 using Vinneren.Storegp.Infraescructure.Interface;
 using Vinneren.Storegp.Transversal.Common;
 
@@ -28,6 +29,7 @@ namespace Vinneren.Storegp.Application.Validator
                 )
             {
                 if (
+                    subcategory.Name != null &&
                     subcategory.Name.Length < 50
                     )
                 {
@@ -95,6 +97,7 @@ namespace Vinneren.Storegp.Application.Validator
             {
                 if (
                     subcategoryDto.Id > 0 &&
+                    subcategoryDto.Name != null &&
                     subcategoryDto.Name.Length < 50
                     ) 
                 {

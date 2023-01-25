@@ -28,6 +28,7 @@ namespace Vinneren.Storegp.Application.Validator
                 )
             {
                 if (
+                    Category.Name != null &&
                     Category.Name.Length < 50
                     )
                 {
@@ -35,7 +36,7 @@ namespace Vinneren.Storegp.Application.Validator
                         Category.Id > 0
                         )
                     {
-
+                        //                                  //Do not something.
                     }
                     else
                     {
@@ -95,6 +96,7 @@ namespace Vinneren.Storegp.Application.Validator
             {
                 if (
                     categoryDto.Id > 0 &&
+                    categoryDto.Name != null &&
                     categoryDto.Name.Length < 50
                     ) 
                 {

@@ -211,7 +211,7 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static InventoryProductBso categoryFromDB(
+		public static InventoryProductBso inventoryProductFromDB(
 
 			int intPk_I,
             ProductBso productForeign_I,
@@ -245,7 +245,7 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static InventoryProductBso categoryFromIQueryable(
+		public static InventoryProductBso inventoryProductFromIQueryable(
 
 			IQueryable<InventoryProductEntity> iqy_I,
             ProductBso productForeign_I,
@@ -278,7 +278,7 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static List<InventoryProductBso> darrcategoryFromIQueryable(
+		public static List<InventoryProductBso> darrinventoryProductFromIQueryable(
 
 			IQueryable<InventoryProductEntity> iqy_I,
             ProductBso productForeign_I,

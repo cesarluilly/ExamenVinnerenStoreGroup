@@ -52,6 +52,9 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi
 
             services.AddScoped<IProductApplication, ProductApplication>();
             services.AddScoped<IProductDomain, ProductDomain>();
+
+            services.AddScoped<IInventoryProductApplication, InventoryProductApplication>();
+            services.AddScoped<IInventoryProductDomain, InventoryProductDomain>();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)

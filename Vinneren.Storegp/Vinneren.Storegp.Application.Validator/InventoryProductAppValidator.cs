@@ -14,44 +14,73 @@ using Vinneren.Storegp.Transversal.Common;
 namespace Vinneren.Storegp.Application.Validator
 {
     //==================================================================================================================
-    public static class ProductAppValidator
+    public static class InventoryProductAppValidator
     {
         //--------------------------------------------------------------------------------------------------------------
         public static bool isValidForAdd(
             
-            ProductDto productDto, 
+            InventoryProductDto inventoryProductDto, 
+            IUnitOfWork unitOfWork_I,
             Status status_I
             )
         {
             if (
-                productDto != null
+                inventoryProductDto != null
                 )
             {
                 if (
-                    productDto.Name != null &&
-                    productDto.Name.Length < 50
+                    inventoryProductDto.Units >= 0
                     )
                 {
                     if (
-                        productDto.NumMaterial != null &&
-                        productDto.NumMaterial.Length < 50
-                        )   
+                        inventoryProductDto.Note.Length < 100
+                        )
                     {
-                        //                                  //Do not something.
+                        //                                  //Do not somethign.
                     }
                     else
                     {
-                        status_I.subSetDevError("name material is very big");
+                        status_I.subSetDevError("Note is very big");
                     }
                 }
                 else
                 {
-                    status_I.subSetDevError("name is very big");
+                    status_I.subSetDevError("Units is negative");
                 }
             }
             else
             {
                 status_I.subSetDevError("Dto is null");
+            }
+
+            if (
+                status_I.boolStatusOk
+                )
+            {
+                InventoryBso inventoryBso = InventoryBso.inventoryFromDB(inventoryProductDto.PkInventory,
+                            unitOfWork_I, true);
+                if (
+                    inventoryBso != null
+                    )
+                {
+                    ProductBso productBso = ProductBso.productFromDB(inventoryProductDto.PkProduct, unitOfWork_I, 
+                        true);
+
+                    if (
+                        productBso != null
+                        )
+                    {
+                        //                                  //Do not something.
+                    }
+                    else
+                    {
+                        status_I.subSetDevError("Pk Product is not valid.");
+                    }
+                }
+                else
+                {
+                    status_I.subSetDevError("Pk inventory is not valid.");
+                }
             }
 
             return status_I.boolStatusOk;
@@ -63,12 +92,13 @@ namespace Vinneren.Storegp.Application.Validator
             int intPk_I,
             Status status_I, 
             IUnitOfWork unitOfWork_I, 
-            out ProductBso productBso_O
+            out InventoryProductBso inventoryProductBso_O
             )
         {
-            productBso_O = ProductBso.productFromDB(intPk_I, unitOfWork_I, true);
+            inventoryProductBso_O = InventoryProductBso.inventoryProductFromDB(intPk_I, null, null, 
+                unitOfWork_I, true);
             if (
-                productBso_O != null
+                inventoryProductBso_O != null
                 )
             {
                 //                                          //Do not something.
@@ -84,38 +114,19 @@ namespace Vinneren.Storegp.Application.Validator
         //--------------------------------------------------------------------------------------------------------------
         public static bool isValidForUpdate(
 
-            ProductDto productDto,
+            InventoryProductDto productDto,
             Status status_I,
             IUnitOfWork unitOfWork_I,
-            out ProductBso productBso_O
+            out InventoryProductBso inventoryProductBso_O
             )
         {
-            productBso_O = ProductBso.productFromDB(productDto.Pk, unitOfWork_I, true);
+            inventoryProductBso_O = InventoryProductBso.inventoryProductFromDB(productDto.Pk, null, null, 
+                unitOfWork_I, true);
             if (
-                productBso_O != null
+                inventoryProductBso_O != null
                 )
             {
-                if (
-                    productDto.Name != null &&
-                    productDto.Name.Length < 50
-                    )
-                {
-                    if (
-                        productDto.NumMaterial != null &&
-                        productDto.NumMaterial.Length < 50
-                        )
-                    {
-                        //                                  //Do not something.
-                    }
-                    else
-                    {
-                        status_I.subSetDevError("name material is very big");
-                    }
-                }
-                else
-                {
-                    status_I.subSetDevError("name is very big");
-                }
+                
             }
             else
             {

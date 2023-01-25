@@ -123,7 +123,7 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static ProductBso categoryFromIQueryable(
+		public static ProductBso productFromIQueryable(
 
 			IQueryable<ProductEntity> iqy_I,
 			IUnitOfWork unitOfWork_I,
@@ -153,7 +153,7 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static List<ProductBso> darrcategoryFromIQueryable(
+		public static List<ProductBso> darrproductFromIQueryable(
 
 			IQueryable<ProductEntity> iqy_I,
 			IUnitOfWork unitOfWork_I,

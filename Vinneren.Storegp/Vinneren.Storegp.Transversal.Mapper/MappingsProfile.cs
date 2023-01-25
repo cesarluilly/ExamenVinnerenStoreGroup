@@ -18,6 +18,7 @@ namespace Vinneren.Storegp.Transversal.Mapper
             CreateMap<SubcategoryEntity, SubcategoryDto>().ReverseMap();
             CreateMap<InventoryEntity, InventoryDto>().ReverseMap();
             CreateMap<ProductEntity, ProductDto>().ReverseMap();
+            CreateMap<InventoryProductEntity, InventoryProductDto>().ReverseMap();
         }
     }
 

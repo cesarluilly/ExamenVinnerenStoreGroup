@@ -13,7 +13,7 @@ using Vinneren.Storegp.Transversal.Common;
 namespace Vinneren.Storegp.Domain.Interface
 {
     //==================================================================================================================
-    public interface IInventoryProducDomain
+    public interface IInventoryProductDomain
     {
         public int subAdd(InventoryProductEntity inventoryProductEntity);
         public InventoryProductEntity subGet(int intPk);

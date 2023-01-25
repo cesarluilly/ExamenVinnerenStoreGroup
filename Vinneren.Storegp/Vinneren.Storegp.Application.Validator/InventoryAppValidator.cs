@@ -19,15 +19,25 @@ namespace Vinneren.Storegp.Application.Validator
         //--------------------------------------------------------------------------------------------------------------
         public static bool isValidForAdd(
             
-            InventoryDto inventory, 
+            InventoryDto inventoryDto, 
             Status status_I
             )
         {
             if (
-                inventory != null
+                inventoryDto != null
                 )
             {
-                
+                if (
+                    inventoryDto.Note != null &&
+                    inventoryDto.Note.Length < 100
+                    )
+                {
+                    //                                      //Do not something.
+                }
+                else
+                {
+                    status_I.subSetDevError("Note is very big");
+                }
             }
             else
             {
