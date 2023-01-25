@@ -1,5 +1,15 @@
 # ExamenVinnerenStoreGroup
 
+# Instrucciones para correr la aplicacion
+* Configurar las credenciales de Sql Server.
+![configCredenciales](./imgReadme/configCredenciales.png)
+
+* Correr la aplicacion 
+    * `Nota. Al correr la aplicacion se generara automaticamente
+la Base de Datos`
+    * En caso de no generarse, entonces correr el comando **``Update-Database``** 
+    desde package manager console.
+
 # Arquitectura NCapas a utilizar
 
 ![arquitecturaNCapas](./imgReadme/arquitecturaNCapas.png)
