@@ -18,6 +18,8 @@ namespace Vinneren.Storegp.Application.Interface
         public ResResponse<int> subAdd(ProductDto productDto);
         public ResResponse<Empty> subUpdate(ProductDto productDto);
         public ResResponse<ProductDto> subGet(int intPk);
+        public ResResponse<List<ProductDto>> subGetByCategoryOrSubCategory(
+            String strCategory, String strSubCategory);
         public ResResponse<List<ProductDto>> subGetAll();
         public ResResponse<Empty> subDelete(int intPk);
     }

@@ -40,6 +40,22 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
 
         //--------------------------------------------------------------------------------------------------------------
         [HttpGet("[action]")]
+        public IActionResult GetByCategoryOrSubCategory(
+
+            String strCategory,
+            String strSubCategory
+            )
+        {
+            var response = _productApplication.subGetByCategoryOrSubCategory(strCategory, strSubCategory);
+
+            if (response.intStatus == 200)
+                return Ok(response);
+
+            return BadRequest(response);
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        [HttpGet("[action]")]
         public IActionResult GetAll(
 
             )

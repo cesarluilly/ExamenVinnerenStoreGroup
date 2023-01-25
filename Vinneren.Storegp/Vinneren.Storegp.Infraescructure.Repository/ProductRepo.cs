@@ -76,8 +76,8 @@ namespace Vinneren.Storegp.Infraescructure.Repository
                        on prod.PkSubCategory equals subCateg.Pk
                        join cat in _unitOfWork.context.Category
                        on subCateg.PkCategory equals cat.Pk
-                       where strCategory_I.Contains(cat.Name) ||
-                       strCategory_I.Contains(subCateg.Name)
+                       where cat.Name.Contains(strCategory_I) ||
+                       subCateg.Name.Contains(strSubcategory)
                        select prod);
             return iqy;
         }

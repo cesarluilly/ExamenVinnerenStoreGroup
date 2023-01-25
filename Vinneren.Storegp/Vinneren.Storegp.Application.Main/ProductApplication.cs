@@ -106,6 +106,39 @@ namespace Vinneren.Storegp.Application.Main
         }
 
         //--------------------------------------------------------------------------------------------------------------
+        public ResResponse<List<ProductDto>> subGetByCategoryOrSubCategory(
+            String strCategory, String strSubCategory)
+        {
+            Status st = Status.stGetInitialOk();
+            ResResponse<List<ProductDto>> respuesta = new ResResponse<List<ProductDto>>(st);
+            try
+            {
+                strCategory = strCategory == null ? "" : strCategory;
+                strCategory = strCategory.TrimStart();
+                strCategory = strCategory.TrimEnd();
+
+                strSubCategory = strSubCategory == null ? "" : strSubCategory;
+                strSubCategory = strSubCategory.TrimStart();
+                strSubCategory = strSubCategory.TrimEnd();
+
+                //                                      //Sort info and transform input data
+                List<ProductEntity> listentitys = _productDomain.subGetByCategoryOrSubCategory(strCategory, 
+                    strSubCategory);
+
+                var listCategoriesDto = listentitys.Select(cat =>
+                    AutoMapperConfig.mapper.Map<ProductDto>(cat)).ToList();
+
+                respuesta.Data = listCategoriesDto;
+            }
+            catch (Exception e)
+            {
+                respuesta.setException(e.Message);
+            }
+
+            return respuesta;
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
         public ResResponse<List<ProductDto>> subGetAll()
         {
             Status st = Status.stGetInitialOk();
