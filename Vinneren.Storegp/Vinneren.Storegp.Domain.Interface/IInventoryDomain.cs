@@ -19,7 +19,7 @@ namespace Vinneren.Storegp.Domain.Interface
         public InventoryEntity subGet(int intPk);
         public List<InventoryEntity> subGetAll();
         public Empty subRemove(InventoryBso inventoryBsoToDelete);
-        public Empty subUpdate(String strName, int intId, InventoryBso inventorybsoToUpdate);
+        public Empty subUpdate(String strNote, InventoryBso inventorybsoToUpdate);
     }
 
     //==================================================================================================================
