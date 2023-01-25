@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Vinneren.Storegp.Domain.Bso.BusinessClass;
 using Vinneren.Storegp.Domain.Entity;
 using Vinneren.Storegp.Transversal.Common;
 
 //                                                          //AUTHOR:  (CLGA - Cesar Garcia).
 //                                                          //CO-AUTHOR:  (-).
 //                                                          //DATE: January 27, 2023. 
-namespace Vinneren.Storegp.Application.Interface
+namespace Vinneren.Storegp.Domain.Interface
 {
     //==================================================================================================================
-    public interface ICategoryApplication
+    public interface ISubcategoryDomain
     {
-        public ResResponse<int> subAdd(CategoryDto category);
-        public ResResponse<Empty> subUpdate(CategoryDto category);
-        public ResResponse<CategoryDto> subGet(int intPk);
-        public ResResponse<List<CategoryDto>> subGetAll();
-        public ResResponse<Empty> subDelete(int intPk);
+        public int subAdd(SubcategoryEntity subcategory);
+        public SubcategoryEntity subGet(int intPk);
+        public List<SubcategoryEntity> subGetAll();
+        public Empty subRemove(SubcategoryBso subcategoryToDelete);
+        public Empty subUpdate(String strName, int intId, SubcategoryBso subcategoryToUpdate);
     }
 
     //==================================================================================================================

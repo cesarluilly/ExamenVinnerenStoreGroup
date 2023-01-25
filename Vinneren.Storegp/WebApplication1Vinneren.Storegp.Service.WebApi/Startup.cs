@@ -43,6 +43,8 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICategoryApplication, CategoryApplication>();
             services.AddScoped<ICategoryDomain, CategoryDomain>();
+            services.AddScoped<ISubcategoryApplication, SubcategoryApplication>();
+            services.AddScoped<ISubcategoryDomain, SubcategoryDomain>();
         }
 
         public void Configure(WebApplication app, IWebHostEnvironment env)

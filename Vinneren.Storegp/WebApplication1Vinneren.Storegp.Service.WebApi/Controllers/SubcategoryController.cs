@@ -11,16 +11,16 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
 {
     //==================================================================================================================
     [Route("api/[controller]")]
-    public class CategoryController : Controller
+    public class SubcategoryController : Controller
     {
-        private readonly ICategoryApplication _categoryDomain;
+        private readonly ISubcategoryApplication _subcategoryDomain;
         //--------------------------------------------------------------------------------------------------------------
-        public CategoryController(
+        public SubcategoryController(
 
-            ICategoryApplication categoryDomain
+            ISubcategoryApplication subcategoryDomain
             )
         {
-            _categoryDomain = categoryDomain;
+            _subcategoryDomain = subcategoryDomain;
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
             int intPk
             )
         {
-            var response = _categoryDomain.subGet(intPk);
+            var response = _subcategoryDomain.subGet(intPk);
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -44,7 +44,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
 
             )
         {
-            var response = _categoryDomain.subGetAll();
+            var response = _subcategoryDomain.subGetAll();
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -56,10 +56,10 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
         [HttpPost("[action]")]
         public IActionResult Add(
 
-            [FromBody] CategoryDto categoryDto
+            [FromBody] SubcategoryDto subcategoryDto
             )
         {
-            var response = _categoryDomain.subAdd(categoryDto);
+            var response = _subcategoryDomain.subAdd(subcategoryDto);
             
             if (response.intStatus == 200)
                 return Ok(response);
@@ -71,10 +71,10 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
         [HttpPut("[action]")]
         public IActionResult Update(
 
-            [FromBody] CategoryDto categoryDto
+            [FromBody] SubcategoryDto subcategoryDto
             )
         {
-            var response = _categoryDomain.subUpdate(categoryDto);
+            var response = _subcategoryDomain.subUpdate(subcategoryDto);
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -89,7 +89,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
             int intPk
             )
         {
-            var response = _categoryDomain.subDelete(intPk);
+            var response = _subcategoryDomain.subDelete(intPk);
 
             if (response.intStatus == 200)
                 return Ok(response);

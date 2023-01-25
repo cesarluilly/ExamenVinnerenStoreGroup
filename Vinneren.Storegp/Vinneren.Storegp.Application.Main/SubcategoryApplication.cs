@@ -20,24 +20,24 @@ using Vinneren.Storegp.Transversal.Mapper;
 //                                                          //DATE: January 23, 2023. 
 namespace Vinneren.Storegp.Application.Main
 {
-    public class CategoryApplication : ICategoryApplication
+    public class SubcategoryApplication : ISubcategoryApplication
     {
-        private readonly ICategoryDomain _categoryDomain;
+        private readonly ISubcategoryDomain _subcategoryDomain;
         private readonly IUnitOfWork _unitOfWork;
 
         //--------------------------------------------------------------------------------------------------------------
-        public CategoryApplication(
+        public SubcategoryApplication(
 
-            ICategoryDomain categoryDomain,
+            ISubcategoryDomain subcategoryDomain,
             IUnitOfWork unitOfWork
             )
         {
-            _categoryDomain = categoryDomain;
+            _subcategoryDomain = subcategoryDomain;
             _unitOfWork = unitOfWork;
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public ResResponse<int> subAdd(CategoryDto category)
+        public ResResponse<int> subAdd(SubcategoryDto subcategory)
         {
             Status st = Status.stGetInitialOk();
             ResResponse<int> respuesta = new ResResponse<int>(st);
@@ -48,13 +48,13 @@ namespace Vinneren.Storegp.Application.Main
 
                 if (
                     //                                      //Validate data
-                    CategoryAppValidator.isValidForAdd(category, st)
+                    SubcategoryAppValidator.isValidForAdd(subcategory, st)
                     )
                 {
                     //                                      //Sort info and transform input data
-                    var categoryEntity = AutoMapperConfig.mapper.Map<CategoryEntity>(category);
+                    var subcategoryEntity = AutoMapperConfig.mapper.Map<SubcategoryEntity>(subcategory);
 
-                    int intPk = _categoryDomain.subAdd(categoryEntity);
+                    int intPk = _subcategoryDomain.subAdd(subcategoryEntity);
 
                     respuesta.Data = intPk;
                     _unitOfWork.CommitTransaction();
@@ -75,10 +75,10 @@ namespace Vinneren.Storegp.Application.Main
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public ResResponse<CategoryDto> subGet(int intPk)
+        public ResResponse<SubcategoryDto> subGet(int intPk)
         {
             Status st = Status.stGetInitialOk();
-            ResResponse<CategoryDto> respuesta = new ResResponse<CategoryDto>(st);
+            ResResponse<SubcategoryDto> respuesta = new ResResponse<SubcategoryDto>(st);
             try
             {
                 if (
@@ -87,8 +87,8 @@ namespace Vinneren.Storegp.Application.Main
                     )
                 {
                     //                                      //Sort info and transform input data
-                    CategoryEntity category = _categoryDomain.subGet(intPk);
-                    var categoryDto = AutoMapperConfig.mapper.Map<CategoryDto>(category);
+                    SubcategoryEntity subcategory = _subcategoryDomain.subGet(intPk);
+                    var categoryDto = AutoMapperConfig.mapper.Map<SubcategoryDto>(subcategory);
 
                     respuesta.Data= categoryDto;
                 }
@@ -106,16 +106,16 @@ namespace Vinneren.Storegp.Application.Main
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public ResResponse<List<CategoryDto>> subGetAll()
+        public ResResponse<List<SubcategoryDto>> subGetAll()
         {
             Status st = Status.stGetInitialOk();
-            ResResponse<List<CategoryDto>> respuesta = new ResResponse<List<CategoryDto>>(st);
+            ResResponse<List<SubcategoryDto>> respuesta = new ResResponse<List<SubcategoryDto>>(st);
             try
             {
                 //                                      //Sort info and transform input data
-                List<CategoryEntity> listCategories = _categoryDomain.subGetAll();
+                List<SubcategoryEntity> listCategories = _subcategoryDomain.subGetAll();
                 var listCategoriesDto = listCategories.Select(cat => 
-                    AutoMapperConfig.mapper.Map<CategoryDto>(cat)).ToList();
+                    AutoMapperConfig.mapper.Map<SubcategoryDto>(cat)).ToList();
 
                 respuesta.Data = listCategoriesDto;
             }
@@ -136,13 +136,13 @@ namespace Vinneren.Storegp.Application.Main
             {
                 //                                          //Init transaction DB.
                 _unitOfWork.StartTransaction();
-                CategoryBso category;
+                SubcategoryBso category;
                 if (
                     //                                      //exist the category
-                    CategoryAppValidator.isValidForDelete(intPk, st, _unitOfWork, out category)
+                    SubcategoryAppValidator.isValidForDelete(intPk, st, _unitOfWork, out category)
                     )
                 {
-                    _categoryDomain.subRemove(category);
+                    _subcategoryDomain.subRemove(category);
 
                     _unitOfWork.CommitTransaction();
                     _unitOfWork.DisposableTransaction();
@@ -162,7 +162,7 @@ namespace Vinneren.Storegp.Application.Main
         }
 
         //--------------------------------------------------------------------------------------------------------------
-        public ResResponse<Empty> subUpdate(CategoryDto categoryDto)
+        public ResResponse<Empty> subUpdate(SubcategoryDto subcategory)
         {
             Status st = Status.stGetInitialOk();
             ResResponse<Empty> respuesta = new ResResponse<Empty>(st);
@@ -170,13 +170,13 @@ namespace Vinneren.Storegp.Application.Main
             {
                 //                                          //Init transaction DB.
                 _unitOfWork.StartTransaction();
-                CategoryBso categoryBso;
+                SubcategoryBso subcategoryBso;
                 if (
                     //                                      //exist the category
-                    CategoryAppValidator.isValidForUpdate(categoryDto, st, _unitOfWork, out categoryBso)
+                    SubcategoryAppValidator.isValidForUpdate(subcategory, st, _unitOfWork, out subcategoryBso)
                     )
                 {
-                    _categoryDomain.subUpdate(categoryDto.Name, categoryDto.Id, categoryBso);
+                    _subcategoryDomain.subUpdate(subcategory.Name, subcategory.Id, subcategoryBso);
 
                     _unitOfWork.CommitTransaction();
                     _unitOfWork.DisposableTransaction();

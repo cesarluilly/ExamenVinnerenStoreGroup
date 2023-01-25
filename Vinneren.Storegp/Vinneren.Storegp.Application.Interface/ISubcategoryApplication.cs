@@ -13,12 +13,12 @@ using Vinneren.Storegp.Transversal.Common;
 namespace Vinneren.Storegp.Application.Interface
 {
     //==================================================================================================================
-    public interface ICategoryApplication
+    public interface ISubcategoryApplication
     {
-        public ResResponse<int> subAdd(CategoryDto category);
-        public ResResponse<Empty> subUpdate(CategoryDto category);
-        public ResResponse<CategoryDto> subGet(int intPk);
-        public ResResponse<List<CategoryDto>> subGetAll();
+        public ResResponse<int> subAdd(SubcategoryDto subcategory);
+        public ResResponse<Empty> subUpdate(SubcategoryDto subcategory);
+        public ResResponse<SubcategoryDto> subGet(int intPk);
+        public ResResponse<List<SubcategoryDto>> subGetAll();
         public ResResponse<Empty> subDelete(int intPk);
     }
 
