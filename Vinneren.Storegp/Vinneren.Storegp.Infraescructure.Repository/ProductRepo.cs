@@ -82,6 +82,20 @@ namespace Vinneren.Storegp.Infraescructure.Repository
             return iqy;
         }
 
+        //--------------------------------------------------------------------------------------------------------------
+        public IQueryable<ProductEntity> GetByRangeInventory(
+            int intInitial, int intEnd)
+        {
+            var iqy = (from prod in _unitOfWork.context.Product
+                       join invprod in _unitOfWork.context.InventoryProduct
+                       on prod.Pk equals invprod.PkProduct
+                       where invprod.Units >= intInitial && 
+                       invprod.Units <= intEnd
+                       select prod);
+            return iqy;
+        }
+
+
         //**************************************************//ADD\\*****************************************************
         //--------------------------------------------------------------------------------------------------------------
         //--------------------------------------------------------------------------------------------------------------

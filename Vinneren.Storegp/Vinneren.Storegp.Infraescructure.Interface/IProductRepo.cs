@@ -15,7 +15,10 @@ namespace Vinneren.Storegp.Infraescructure.Interface
         //**************************************************//GET\\*****************************************************
         public IQueryable<ProductEntity> GetByCategoryOrSubcategory(
             String strCategory_I, String strSubcategory);
-        
+
+        public IQueryable<ProductEntity> GetByRangeInventory(
+            int intInitial, int intEnd);
+
         //**************************************************//ADD\\*****************************************************
 
         //**************************************************//UPDATE\\**************************************************
