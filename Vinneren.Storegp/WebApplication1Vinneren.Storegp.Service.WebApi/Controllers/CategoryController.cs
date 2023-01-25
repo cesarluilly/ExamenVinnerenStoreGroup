@@ -13,14 +13,14 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
     [Route("api/[controller]")]
     public class CategoryController : Controller
     {
-        private readonly ICategoryApplication _categoryDomain;
+        private readonly ICategoryApplication _categoryApplication;
         //--------------------------------------------------------------------------------------------------------------
         public CategoryController(
 
-            ICategoryApplication categoryDomain
+            ICategoryApplication categoryApplication
             )
         {
-            _categoryDomain = categoryDomain;
+            _categoryApplication = categoryApplication;
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
             int intPk
             )
         {
-            var response = _categoryDomain.subGet(intPk);
+            var response = _categoryApplication.subGet(intPk);
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -44,7 +44,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
 
             )
         {
-            var response = _categoryDomain.subGetAll();
+            var response = _categoryApplication.subGetAll();
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -59,7 +59,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
             [FromBody] CategoryDto categoryDto
             )
         {
-            var response = _categoryDomain.subAdd(categoryDto);
+            var response = _categoryApplication.subAdd(categoryDto);
             
             if (response.intStatus == 200)
                 return Ok(response);
@@ -74,7 +74,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
             [FromBody] CategoryDto categoryDto
             )
         {
-            var response = _categoryDomain.subUpdate(categoryDto);
+            var response = _categoryApplication.subUpdate(categoryDto);
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -89,7 +89,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
             int intPk
             )
         {
-            var response = _categoryDomain.subDelete(intPk);
+            var response = _categoryApplication.subDelete(intPk);
 
             if (response.intStatus == 200)
                 return Ok(response);

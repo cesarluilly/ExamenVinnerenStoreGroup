@@ -11,16 +11,16 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
 {
     //==================================================================================================================
     [Route("api/[controller]")]
-    public class SubcategoryController : Controller
+    public class InventoryController : Controller
     {
-        private readonly ISubcategoryApplication _subcategoryApplication;
+        private readonly IInventoryApplication _inventoryApplication;
         //--------------------------------------------------------------------------------------------------------------
-        public SubcategoryController(
+        public InventoryController(
 
-            ISubcategoryApplication subcategoryApplication
+            IInventoryApplication inventoryApplication
             )
         {
-            _subcategoryApplication = subcategoryApplication;
+            _inventoryApplication = inventoryApplication;
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
             int intPk
             )
         {
-            var response = _subcategoryApplication.subGet(intPk);
+            var response = _inventoryApplication.subGet(intPk);
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -44,7 +44,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
 
             )
         {
-            var response = _subcategoryApplication.subGetAll();
+            var response = _inventoryApplication.subGetAll();
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -56,10 +56,10 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
         [HttpPost("[action]")]
         public IActionResult Add(
 
-            [FromBody] SubcategoryDto subcategoryDto
+            [FromBody] InventoryDto inventoryDto
             )
         {
-            var response = _subcategoryApplication.subAdd(subcategoryDto);
+            var response = _inventoryApplication.subAdd(inventoryDto);
             
             if (response.intStatus == 200)
                 return Ok(response);
@@ -71,10 +71,10 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
         [HttpPut("[action]")]
         public IActionResult Update(
 
-            [FromBody] SubcategoryDto subcategoryDto
+            [FromBody] InventoryDto inventoryDto
             )
         {
-            var response = _subcategoryApplication.subUpdate(subcategoryDto);
+            var response = _inventoryApplication.subUpdate(inventoryDto);
 
             if (response.intStatus == 200)
                 return Ok(response);
@@ -89,7 +89,7 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
             int intPk
             )
         {
-            var response = _subcategoryApplication.subDelete(intPk);
+            var response = _inventoryApplication.subDelete(intPk);
 
             if (response.intStatus == 200)
                 return Ok(response);
