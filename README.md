@@ -4,6 +4,9 @@
 * Configurar las credenciales de Sql Server.
 ![configCredenciales](./imgReadme/configCredenciales.png)
 
+* Marcar el proyecto WebApi como la **Set as startup project**
+![setStartupProject](./imgReadme/setStartupProject.png)
+
 * Correr la aplicacion 
     * `Nota. Al correr la aplicacion se generara automaticamente
 la Base de Datos`
