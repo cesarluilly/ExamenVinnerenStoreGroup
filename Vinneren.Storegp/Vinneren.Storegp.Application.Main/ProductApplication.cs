@@ -139,6 +139,44 @@ namespace Vinneren.Storegp.Application.Main
         }
 
         //--------------------------------------------------------------------------------------------------------------
+        public ResResponse<List<ProductDto>> GetByRangeInventory(
+            int intInitial, int intEnd)
+        {
+            Status st = Status.stGetInitialOk();
+            ResResponse<List<ProductDto>> respuesta = new ResResponse<List<ProductDto>>(st);
+            try
+            {
+                if (
+                    intInitial > 0 &&
+                    intEnd > 0 &&
+                    intInitial <= intEnd
+                    )
+                {
+                    //                                      //Sort info and transform input data
+                    List<ProductEntity> listentitys = _productDomain.subGetByRangeInventory(intInitial,
+                        intEnd);
+
+                    var listCategoriesDto = listentitys.Select(cat =>
+                    AutoMapperConfig.mapper.Map<ProductDto>(cat)).ToList();
+
+                    respuesta.Data = listCategoriesDto;
+                }
+                else
+                {
+                    st.subSetDevError("Invalid data, review ranges");
+                }
+
+                
+            }
+            catch (Exception e)
+            {
+                respuesta.setException(e.Message);
+            }
+
+            return respuesta;
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
         public ResResponse<List<ProductDto>> subGetAll()
         {
             Status st = Status.stGetInitialOk();
