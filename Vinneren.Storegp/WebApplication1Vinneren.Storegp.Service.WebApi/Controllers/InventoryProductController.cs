@@ -11,16 +11,16 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
 {
     //==================================================================================================================
     [Route("api/[controller]")]
-    public class ProductController : Controller
+    public class InventoryProductController : Controller
     {
-        private readonly IProductApplication _productApplication;
+        private readonly IInventoryProductApplication _productApplication;
         //--------------------------------------------------------------------------------------------------------------
-        public ProductController(
+        public InventoryProductController(
 
-            IProductApplication productApplication
+            IInventoryProductApplication inventoryProductApplication
             )
         {
-            _productApplication = productApplication;
+            _productApplication = inventoryProductApplication;
         }
 
         //--------------------------------------------------------------------------------------------------------------
@@ -56,10 +56,10 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
         [HttpPost("[action]")]
         public IActionResult Add(
 
-            [FromBody] ProductDto productDto
+            [FromBody] InventoryProductDto inventoryProducDto
             )
         {
-            var response = _productApplication.subAdd(productDto);
+            var response = _productApplication.subAdd(inventoryProducDto);
             
             if (response.intStatus == 200)
                 return Ok(response);
@@ -71,10 +71,10 @@ namespace WebApplication1Vinneren.Storegp.Service.WebApi.Controllers
         [HttpPut("[action]")]
         public IActionResult Update(
 
-            [FromBody] ProductDto productDto
+            [FromBody] InventoryProductDto inventoryProductDto
             )
         {
-            var response = _productApplication.subUpdate(productDto);
+            var response = _productApplication.subUpdate(inventoryProductDto);
 
             if (response.intStatus == 200)
                 return Ok(response);

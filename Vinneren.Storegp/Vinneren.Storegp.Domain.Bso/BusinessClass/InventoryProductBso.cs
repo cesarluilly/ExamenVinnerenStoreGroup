@@ -158,7 +158,7 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
                     )
                 {
                     //										//Build the instance.
-                    ProductForeign_O = ProductBso.categoryFromDB(this._InventoryProductEntity_Z.PkProduct,
+                    ProductForeign_O = ProductBso.productFromDB(this._InventoryProductEntity_Z.PkProduct,
                         this._unitOfWork_Z, this.boolAsTracking_Z);
                 }
             }

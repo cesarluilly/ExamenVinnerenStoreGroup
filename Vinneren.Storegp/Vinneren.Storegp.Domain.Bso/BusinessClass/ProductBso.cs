@@ -92,7 +92,7 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 		}
 
 		//--------------------------------------------------------------------------------------------------------------
-		public static ProductBso categoryFromDB(
+		public static ProductBso productFromDB(
 
 			int intPk_I,
 			IUnitOfWork unitOfWork_I,
