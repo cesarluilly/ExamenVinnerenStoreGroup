@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vinneren.Storegp.Domain.Entity;
 using Vinneren.Storegp.Infraescructure.Data;
 using Vinneren.Storegp.Infraescructure.Interface;
 
@@ -64,6 +65,21 @@ namespace Vinneren.Storegp.Infraescructure.Repository
             int? intPkEmpSet = _context.Category.Where(ct => ct.Pk == intPk)
                 .Select(cta => cta.Pk).FirstOrDefault();
             return intPkEmpSet != 0;
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
+        public IQueryable<ProductEntity> GetByCategoryOrSubcategory(
+            String strCategory_I, String strSubcategory)
+        {
+            var iqy = (from prod in _unitOfWork.context.Product 
+                       join subCateg in _unitOfWork.context.Subcategory 
+                       on prod.PkSubCategory equals subCateg.Pk
+                       join cat in _unitOfWork.context.Category
+                       on subCateg.PkCategory equals cat.Pk
+                       where strCategory_I.Contains(cat.Name) ||
+                       strCategory_I.Contains(subCateg.Name)
+                       select prod);
+            return iqy;
         }
 
         //**************************************************//ADD\\*****************************************************

@@ -18,6 +18,8 @@ namespace Vinneren.Storegp.Domain.Interface
         public int subAdd(ProductEntity productEntity);
         public ProductEntity subGet(int intPk);
         public List<ProductEntity> subGetAll();
+        public List<ProductEntity> subGetByCategoryOrSubCategory(
+            String strCategory, String strSubCategory);
         public Empty subRemove(ProductBso productBsoToDelete);
         public Empty subUpdate(String strName, String strMaterial, ProductBso productbsoToUpdate);
     }

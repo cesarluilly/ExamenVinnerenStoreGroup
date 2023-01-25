@@ -49,6 +49,14 @@ namespace Vinneren.Storegp.Domain.Core
         }
 
         //--------------------------------------------------------------------------------------------------------------
+        public List<ProductEntity> subGetByCategoryOrSubCategory(
+            String strCategory, String strSubCategory)
+        {
+            return _unitOfWork.ProductRepo.GetByCategoryOrSubcategory(strCategory, 
+                strSubCategory).ToList();
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
         public Empty subRemove(ProductBso productBsoToDelete)
         {
             productBsoToDelete.subDeleteAtDB();
