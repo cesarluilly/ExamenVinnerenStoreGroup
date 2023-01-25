@@ -20,6 +20,9 @@ namespace Vinneren.Storegp.Domain.Interface
         public List<ProductEntity> subGetAll();
         public List<ProductEntity> subGetByCategoryOrSubCategory(
             String strCategory, String strSubCategory);
+
+        public List<ProductEntity> subGetByRangeInventory(
+            int intInitial, int intEnd);
         public Empty subRemove(ProductBso productBsoToDelete);
         public Empty subUpdate(String strName, String strMaterial, ProductBso productbsoToUpdate);
     }

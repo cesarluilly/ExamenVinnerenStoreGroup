@@ -57,6 +57,14 @@ namespace Vinneren.Storegp.Domain.Core
         }
 
         //--------------------------------------------------------------------------------------------------------------
+        public List<ProductEntity> GetByRangeInventory(
+            int intInitial, int intEnd)
+        {
+            return _unitOfWork.ProductRepo.GetByRangeInventory(intInitial,
+                intEnd).ToList();
+        }
+
+        //--------------------------------------------------------------------------------------------------------------
         public Empty subRemove(ProductBso productBsoToDelete)
         {
             productBsoToDelete.subDeleteAtDB();
