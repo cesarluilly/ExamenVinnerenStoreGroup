@@ -18,5 +18,6 @@ namespace Vinneren.Storegp.Domain.Entity
         public int Pk { get; set; }
         public String? Name { get; set; }
         public String? NumMaterial { get; set; }
+        public int PkSubCategory { get; set; }
     }
 }

@@ -18,4 +18,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+startup.Configure(app, app.Environment);
+
 app.Run();

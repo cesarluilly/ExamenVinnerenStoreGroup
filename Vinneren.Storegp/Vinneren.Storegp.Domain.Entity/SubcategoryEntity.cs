@@ -22,5 +22,10 @@ namespace Vinneren.Storegp.Domain.Entity
         [Column("Name", TypeName = "nvarchar(50)")]
         public string? Name { get; set; }
         public int Id { get; set; }
+
+        [Required]
+        public int PkCategory { get; set; }
+        [ForeignKey("PkCategory")]
+        public CategoryEntity? Category { get; set; }
     }
 }

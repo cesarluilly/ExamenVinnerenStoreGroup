@@ -31,6 +31,15 @@ namespace Vinneren.Storegp.Infraescructure.Data
             modelBuilder.Entity<InventoryProductEntity>()
                 .HasOne(a => a.Product).WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
+
+            //                                              //Product
+            modelBuilder.Entity<ProductEntity>()
+                .HasOne(a => a.Subcategory).WithMany()
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<SubcategoryEntity>()
+                .HasOne(a => a.Category).WithMany()
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

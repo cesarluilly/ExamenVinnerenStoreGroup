@@ -20,7 +20,8 @@ namespace Vinneren.Storegp.Application.Validator
         public static bool isValidForAdd(
             
             ProductDto productDto, 
-            Status status_I
+            Status status_I,
+            IUnitOfWork unitOfWork_I
             )
         {
             if (
@@ -37,7 +38,28 @@ namespace Vinneren.Storegp.Application.Validator
                         productDto.NumMaterial.Length < 50
                         )   
                     {
-                        //                                  //Do not something.
+                        if (
+                            productDto.PkSubCategory > 0
+                            )
+                        {
+                            SubcategoryBso subcategoryBso = SubcategoryBso.subcategoryFromDB(productDto.PkSubCategory, 
+                                unitOfWork_I, false);
+
+                            if (
+                                subcategoryBso != null
+                                )
+                            {
+                                //                          //Do not something.
+                            }
+                            else
+                            {
+                                status_I.subSetDevError("Not exist Subcategory with the Pk, Your need add a Subcategory.");
+                            }
+                        }
+                        else
+                        {
+                            status_I.subSetDevError("PkSubcategory is negative or zero.");
+                        }
                     }
                     else
                     {

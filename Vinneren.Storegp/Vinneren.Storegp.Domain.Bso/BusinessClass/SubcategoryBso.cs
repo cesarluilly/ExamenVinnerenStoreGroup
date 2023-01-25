@@ -21,9 +21,14 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
 	{
         //-------------------------------------------------------------------------------------------------------------
         //                                                  //INSTANCE VARIABLES.
-        public int Pk { get {return this.SubcategoryEntity_Z.Pk; } set {this.SubcategoryEntity_Z.Pk = value; } }
-        public string? Name { get {return this.SubcategoryEntity_Z.Name; } set {this.SubcategoryEntity_Z.Name = value; } }
-        public int Id { get { return this.SubcategoryEntity_Z.Id; } set { this.SubcategoryEntity_Z.Id = value; } }
+        public int Pk { get {return this.SubcategoryEntity_Z.Pk; } 
+			set {this.SubcategoryEntity_Z.Pk = value; } }
+        public string? Name { get {return this.SubcategoryEntity_Z.Name; } 
+			set {this.SubcategoryEntity_Z.Name = value; } }
+        public int Id { get { return this.SubcategoryEntity_Z.Id; } 
+			set { this.SubcategoryEntity_Z.Id = value; } }
+        public int PkCategory { get { return this.SubcategoryEntity_Z.PkCategory; } 
+			set { this.SubcategoryEntity_Z.PkCategory = value; } }
 
         //--------------------------------------------------------------------------------------------------------------
         //                                                  //DYNAMIC VARIABLES.

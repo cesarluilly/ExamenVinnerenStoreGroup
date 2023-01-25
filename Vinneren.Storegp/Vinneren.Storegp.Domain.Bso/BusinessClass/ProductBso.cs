@@ -28,6 +28,8 @@ namespace Vinneren.Storegp.Domain.Bso.BusinessClass
         public string? NumMaterial { get { return this.ProductEntity.NumMaterial ;} 
 			set { this.ProductEntity.NumMaterial = value;} }
 
+        public int PkSubCategory { get { return this.ProductEntity.PkSubCategory; }
+			set { this.PkSubCategory = value; } }
 
         //--------------------------------------------------------------------------------------------------------------
         //                                                  //DYNAMIC VARIABLES.

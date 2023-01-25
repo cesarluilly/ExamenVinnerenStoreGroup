@@ -21,7 +21,8 @@ namespace Vinneren.Storegp.Application.Validator
         public static bool isValidForAdd(
             
             SubcategoryDto subcategory, 
-            Status status_I
+            Status status_I,
+            IUnitOfWork unitOfWork_I
             )
         {
             if (
@@ -37,7 +38,28 @@ namespace Vinneren.Storegp.Application.Validator
                         subcategory.Id > 0
                         )
                     {
+                        if (
+                            subcategory.PkCategory > 0
+                            )
+                        {
+                            CategoryBso category = CategoryBso.categoryFromDB(subcategory.PkCategory, 
+                                unitOfWork_I, true);
 
+                            if (
+                                category != null
+                                )
+                            {
+                                //                          //Do not somethign.
+                            }
+                            else
+                            {
+                                status_I.subSetDevError("Pk invalid, category not exist. Your need add a category valid");
+                            }
+                        }
+                        else
+                        {
+                            status_I.subSetDevError("Pk category is negative or zero");
+                        }
                     }
                     else
                     {
@@ -96,16 +118,45 @@ namespace Vinneren.Storegp.Application.Validator
                 )
             {
                 if (
-                    subcategoryDto.Id > 0 &&
                     subcategoryDto.Name != null &&
                     subcategoryDto.Name.Length < 50
                     ) 
                 {
-                    //                                          //Do not something.
+                    if (
+                        subcategoryDto.Id > 0
+                        )
+                    {
+                        if (
+                            subcategoryDto.PkCategory > 0
+                            )
+                        {
+                            CategoryBso category = CategoryBso.categoryFromDB(subcategoryDto.PkCategory,
+                                unitOfWork_I, false);
+
+                            if (
+                                category != null
+                                )
+                            {
+                                //                          //Do not somethign.
+                            }
+                            else
+                            {
+                                status_I.subSetDevError("Pk invalid, category not exist. Your need add a category valid");
+                            }
+                        }
+                        else
+                        {
+                            status_I.subSetDevError("Pk category is negative or zero");
+                        }
+                    }
+                    else
+                    {
+                        status_I.subSetUserError("Id should be greater than zero.");
+                    }
                 }
                 else
                 {
-                    status_I.subSetDevError("Id or name invalid");
+                    status_I.subSetDevError("Name invalid");
                 }
             }
             else

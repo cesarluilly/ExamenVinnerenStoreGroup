@@ -13,10 +13,11 @@ using Vinneren.Storegp.Domain.Entity.ByTable;
 namespace Vinneren.Storegp.Domain.Entity
 {
     //==================================================================================================================
-    public class SubcategoryDto : ICategory
+    public class SubcategoryDto : ISubcategory
     {
         public int Pk {get; set;}
         public string? Name { get; set; }
         public int Id { get; set; }
+        public int PkCategory { get; set; }
     }
 }

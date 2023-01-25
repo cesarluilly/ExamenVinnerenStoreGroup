@@ -48,7 +48,7 @@ namespace Vinneren.Storegp.Application.Main
 
                 if (
                     //                                      //Validate data
-                    SubcategoryAppValidator.isValidForAdd(subcategory, st)
+                    SubcategoryAppValidator.isValidForAdd(subcategory, st, _unitOfWork)
                     )
                 {
                     //                                      //Sort info and transform input data

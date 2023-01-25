@@ -25,5 +25,10 @@ namespace Vinneren.Storegp.Domain.Entity
         public String? Name { get; set; }
         [Column("NumMaterial", TypeName = "nvarchar(50)")]
         public String? NumMaterial { get; set; }
+
+        [Required]
+        public int PkSubCategory { get; set; }
+        [ForeignKey("PkSubCategory")]
+        public SubcategoryEntity? Subcategory { get; set; }
     }
 }

@@ -15,5 +15,6 @@ namespace Vinneren.Storegp.Domain.Entity.ByTable
         public int Pk { get; set; }
         public String? Name { get; set; }
         public int Id { get; set; }
+        public int PkCategory { get; set; }
     }
 }
